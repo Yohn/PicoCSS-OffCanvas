@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Offcanvas Example</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.8/css/pico.lime.css">
+	<link rel="stylesheet" href="OffCanvas.css">
+	<link rel="stylesheet" href="OffCanvasAnimations.css">
+	<style>
+		button {
+			margin: 0.5rem;
+		}
+	</style>
+</head>
+
+<body>
+	<main class="container">
+		<h1>Offcanvas Examples</h1>
+		<!-- Fade animation example -->
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-9" data-direction="right" data-animation="fade"
+			data-backdrop="true">
+			Right (Fade Animation)
+		</button>
+
+		<!-- Zoom animation example -->
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-10" data-direction="left" data-animation="zoom"
+			data-backdrop="true">
+			Left (Zoom Animation)
+		</button>
+
+		<!-- Buttons -->
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-1" data-direction="left" data-backdrop="true"
+			data-scroll-lock="true">
+			Left (Backdrop, Lock Scroll)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-2" data-direction="right" data-backdrop="false"
+			data-scroll-lock="false">
+			Right (No Backdrop, Scroll Enabled)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-3" data-direction="top" data-backdrop="true"
+			data-scroll-lock="false">
+			Top (Backdrop, Scroll Enabled)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-4" data-direction="bottom" data-backdrop="false"
+			data-scroll-lock="true">
+			Bottom (No Backdrop, Lock Scroll)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-5" data-direction="left" data-push="true"
+			data-backdrop="true">
+			Left (Push Content, Backdrop)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-6" data-direction="right" data-push="false"
+			data-url="example-content.html">
+			Right (Load Content from URL)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-7" data-direction="top" data-animation="fade"
+			data-backdrop="true">
+			Top (Custom Animation: Fade)
+		</button>
+		<button class="offcanvas-trigger" data-offcanvas-target="#offcanvas-8" data-direction="bottom"
+			data-animation="slide" data-backdrop="false">
+			Bottom (Custom Animation: Slide)
+		</button>
+		<br>
+		<article>
+			<header>
+				<h2>Offcanvas Elements</h2>
+			</header>
+			<ul>
+				<li>
+					<a href="https://codepen.io/giggles0369/pen/RwEOqLQ">
+						Pico 1.5 Offcanvas
+					</a>
+				</li>
+				<li>
+					<a href="https://codepen.io/atmos4/pen/VwRVxZR?editors=1010">
+						Pico 2.0 Modals close with HTML
+					</a>
+					<details>
+						<summary>
+							Code Example
+						</summary>
+						<textarea style="height:150px"><form>
+	<button class=close formmethod=dialog></button>
+</form>
+						</textarea>
+					</details>
+				</li>
+				<li>
+					<a href="https://codepen.io/vardumper/pen/jOKjjbv?editors=1000">
+						Another Tab idea to cycle through all with a label button
+					</a>
+				</li>
+			</ul>
+		</article>
+
+		<!-- Offcanvas Elements -->
+		<div id="offcanvas-1" class="offcanvas" data-direction="left">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 1</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 1</div>
+		</div>
+
+		<div id="offcanvas-2" class="offcanvas" data-direction="right">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 2</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 2</div>
+		</div>
+
+		<div id="offcanvas-3" class="offcanvas" data-direction="top">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 3</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 3</div>
+		</div>
+
+		<div id="offcanvas-4" class="offcanvas" data-direction="bottom">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 4</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 4</div>
+		</div>
+
+		<div id="offcanvas-5" class="offcanvas" data-direction="left">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 5</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 5</div>
+		</div>
+
+		<div id="offcanvas-6" class="offcanvas" data-direction="right">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 6</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content will load from URL</div>
+		</div>
+
+		<div id="offcanvas-7" class="offcanvas" data-direction="top">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 7</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 7</div>
+		</div>
+
+		<div id="offcanvas-8" class="offcanvas" data-direction="bottom">
+			<div class="offcanvas-header">
+				<h2>Offcanvas 8</h2>
+				<button class="offcanvas-close">Close</button>
+			</div>
+			<div class="offcanvas-body">Content for Offcanvas 8</div>
+		</div>
+	</main>
+	<div id="offcanvas-9" class="offcanvas" data-direction="bottom">
+		<div class="offcanvas-header">
+			<h2>Offcanvas 8</h2>
+			<button class="offcanvas-close">Close</button>
+		</div>
+		<div class="offcanvas-body">Content for Offcanvas 8</div>
+	</div>
+</main>
+<div id="offcanvas-10" class="offcanvas" data-direction="bottom">
+	<div class="offcanvas-header">
+		<h2>Offcanvas 8</h2>
+		<button class="offcanvas-close">Close</button>
+	</div>
+	<div class="offcanvas-body">Content for Offcanvas 8</div>
+</div>
+</main>
+
+	<script src="offcanvas.js"></script>
+</body>
+
+</html>

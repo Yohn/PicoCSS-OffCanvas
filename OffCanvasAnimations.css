@@ -1,0 +1,47 @@
+/* Fade animations */
+.offcanvas[data-animation="fade"] {
+    /* Reset any sliding transforms and positions */
+    transform: none !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    opacity: 0;
+}
+
+.offcanvas[data-animation="fade"].open {
+    opacity: 1;
+}
+
+/* Zoom animations */
+.offcanvas[data-animation="zoom"] {
+    /* Reset any sliding transforms and positions */
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: scale(0.5) !important;
+    opacity: 0;
+}
+
+.offcanvas[data-animation="zoom"].open {
+    transform: scale(1) !important;
+    opacity: 1;
+}
+
+/* Position specific zoom origins */
+.offcanvas[data-animation="zoom"][data-direction="left"] {
+    transform-origin: left center;
+}
+
+.offcanvas[data-animation="zoom"][data-direction="right"] {
+    transform-origin: right center;
+}
+
+.offcanvas[data-animation="zoom"][data-direction="top"] {
+    transform-origin: top center;
+}
+
+.offcanvas[data-animation="zoom"][data-direction="bottom"] {
+    transform-origin: bottom center;
+}

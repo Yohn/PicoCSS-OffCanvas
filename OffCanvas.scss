@@ -1,0 +1,101 @@
+.offcanvas {
+	background-color: var(--pico-accent-bg-color, #222);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	overflow-y: auto;
+	transition: transform 0.3s ease-in-out,
+						opacity 0.3s ease-in-out,
+						z-index 0.3s ease-in-out;
+	// Default dimensions
+	z-index: -10;
+	opacity: 0;
+	width: 18.75rem; // 300px
+	height: 100vh;
+	top: 0;
+	//display: none; // Hidden by default
+	position: fixed;
+	// Other styles...
+
+	// Hidden state (off-screen based on direction)
+	&[data-direction="left"] {
+		left: -18.75rem;
+		transform: translateX(0);
+	}
+
+	&[data-direction="right"] {
+		right: -18.75rem;
+		transform: translateX(0);
+	}
+
+	&[data-direction="top"] {
+		top: -18.75rem;
+		left: 0;
+		width: 100vw;
+		height: 18.75rem;
+		transform: translateY(0);
+	}
+
+	&[data-direction="bottom"] {
+		bottom: -18.75rem;
+		left: 0;
+		top: unset;
+		width: 100%;
+		height: 18.75rem;
+		transform: translateY(0);
+	}
+
+	&.open {
+		display: block; // Visible when open
+		z-index: 1050;
+		opacity: 1;
+		// Transition and animations
+		// Visible state (aligns to the edge it opens from)
+		&[data-direction="left"] {
+			transform: translateX(18.75rem);
+		}
+
+		&[data-direction="right"] {
+			transform: translateX(-18.75rem);
+		}
+
+		&[data-direction="top"] {
+			transform: translateY(18.75rem);
+		}
+
+		&[data-direction="bottom"] {
+			transform: translateY(-18.75rem);
+		}
+	}
+
+	.offcanvas-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		background-color: var(--pico-accent-section-bg-color, #333);
+		color: var(--pico-color, #fff);
+	}
+
+	.offcanvas-body {
+		padding: 1rem;
+	}
+}
+.offcanvas-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -100;
+	opacity:0;
+	transition: opacity 0.3s ease-in-out,
+							height 0.3s ease-in-out,
+							width 0.3s ease-in-out;
+}
+
+.offcanvas-open .offcanvas-backdrop {
+	opacity: 1;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+}
